@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html manifest="cademo.appcache">
+  <head>
+    <title>html</title>
+    <meta charset="utf-8">  
+  </head>
+  <body oncopy="return false;">
+    
+      <p onclick="this.innerHTML='ot!' ">测&nbsp试</p>
+      <a href="javascript.:top.window.close();">点击关闭窗口</a>
+      <video id="epp" height="300px" width="30%" controls>
+        <source src="demo.mp4"  type="video/mp4">
+      </video>
+      <img src="2.png" width="400px" height="300px">
+      <div>
+          <button onclick="playPause()">播放/暂停</button> 
+          <button onclick="makeBig()">放大</button>
+          <button onclick="makeSmall()">缩小</button>
+          <button onclick="makeNormal()">普通</button>
+      </div>      
+      <div id="d">
+        <input type="color" name="favcolor">
+        <input type="date" name="bday">
+        <p id="ol">这是旧的</p>
+        <p id="intro">Hello World!</p>
+        <p id="tro" onmouseover="p()">Hello</p>
+        <button onclick="fcc()">改变颜色</button>
+      </div>
+      <div onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38;width:90px;height:20px;padding:40px;">Click Me</div>
+        <script>    
+
+            function p(){
+              document.getElementById("tro").innerHTML="悬浮"
+            
+            }
+
+            var myVideo=document.getElementById("epp"); 
+            function playPause()
+            { 
+              if (myVideo.paused) 
+                myVideo.play(); 
+              else 
+                myVideo.pause(); 
+            } 
+            function makeBig()
+            { myVideo.width=1000; } 
+            function makeSmall()
+            { myVideo.width=500; } 
+            a = document.getElementById("intro")
+            document.write("<p>你好鸭" + a.innerHTML + "</p>")
+
+            document.getElementById("tro").innerHTML="olleW";
+            document.getElementById("tro").style.color="red";
+
+            var c = document.createElement("a")
+            var c1 = document.createTextNode("百度一下")
+            c.appendChild(c1)
+            c.setAttribute("href", "https://baidu.com")
+            var element = document.getElementById("d")
+            element.appendChild(c)
+            function fcc(){
+              document.getElementById("tro").style.color = "blue"
+            }
+
+            var n = document.createElement("p")
+            var n1 = document.createTextNode("这是新的")
+            n.appendChild(n1)
+            var np = document.getElementById("d")
+            var npc = document.getElementById("ol")
+            np.replaceChild(n,npc)
+            function mDown(obj)
+            {
+            obj.style.backgroundColor="#1ec5e5";
+            obj.innerHTML="Release Me"
+            }
+
+            function mUp(obj)
+            {
+            obj.style.backgroundColor="#D94A38";
+            obj.innerHTML="Thank You"
+            }
+            alert(document.body.innerHTML)
+        </script>
+    
+  </body>
+</html>
